@@ -12,29 +12,32 @@
    ```bash
    git clone https://github.com/RivenLab/packer-proxmox-templates.git
    ```
-### Navigate to the Directory
+### **Navigate to the Directory**
    ```bash
     cd packer-proxmox-templates
    ```
-### Copy Example Variablescp example-variables.pkrvars.hcl variables.auto.pkrvars.hcl
+### **Copy Example Variablescp example-variables.pkrvars.hcl variables.auto.pkrvars.hcl**
    ```bash
    cp example-variables.pkrvars.hcl variables.auto.pkrvars.hcl
    ```
-### Edit Variables
+### **Edit Variables**
 
 Open variables.auto.pkrvars.hcl and update it to correspond with your current environment.
 
-Add Your Public SSH Key
+### **Add Your Public SSH Key**
 
 Place your public SSH key in the cloud.cfg file under ssh_authorized_keys:ssh_authorized_keys:
   - ssh-rsa AAAAB3... your_key_comment
 
+### **Initialize Packer**
+   ```bash
+packer init .
+   ```
 
-Initialize Packerpacker init .
+### **Build the Template**
+   ```bash
+packer build .
+   ```
 
-
-Build the Templatepacker build .
-
-
-Note
+# Note
 The default user is: dragon.
